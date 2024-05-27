@@ -2,7 +2,6 @@ package controllers
 
 import (
 	"errors"
-	"fmt"
 	apiErr "ka/pkg/errors"
 	"ka/src/response"
 	service "ka/src/services"
@@ -53,8 +52,6 @@ func (h *ServiceHandler) GetService(ctx *gin.Context) {
 		response.SendResponse(ctx, nil, apiErr.InternalError, err)
 		return
 	}
-	fmt.Println("=====================")
-	fmt.Println(service)
 	response.SendResponse(ctx, service, apiErr.RequestSucess, err)
 }
 

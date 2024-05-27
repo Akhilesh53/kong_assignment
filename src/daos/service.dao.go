@@ -43,7 +43,7 @@ func (sr *ServiceRepository) GetAllServices(ctx *gin.Context, name string, sort 
 
 func (sr *ServiceRepository) GetServiceByID(ctx *gin.Context, id int) (*models.Service, error) {
 	var service models.Service
-	if err := sr.db.WithContext(ctx).Table(constants.T_SERVICES).Where("id = ?", id).Error; err != nil {
+	if err := sr.db.WithContext(ctx).Table(constants.T_SERVICES).Where("id = ?", id).Preload("Versions").Find(&service).Error; err != nil {
 		return nil, err
 	}
 	return &service, nil

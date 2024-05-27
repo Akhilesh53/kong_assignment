@@ -19,7 +19,7 @@ var envVarsInstance *envVars
 func GetEnvVars() *envVars {
 	envVarsOnce.Do(func() {
 		envVarsInstance = &envVars{
-			postgresHost:     "localhost",
+			postgresHost:     "127.0.0.1",
 			postgresPort:     "5432",
 			postgresUser:     "postgres",
 			postgresPassword: "AkhileshPostgres",
