@@ -74,17 +74,6 @@ Here I have used Basic Auth to authorise the user.
 Need to pass userid and password in basic auth section or pass a Basic Auth Token in the headers section.
 If user is valid, it will authorise the access ti hit the api.
 
--------------------------------
-*Changes to be done to make this code running on other server*
--------------------------------
-
-1) Change the DB env vars
-   - Go to ./config/config.go
-   - Change the value for postgresHost, postgresPort,postgresUser,postgresPassword,postgresDB,processName
-
-2) Create Tables and Insert data to the tables
-   - Attached sql queries in ./queries folder
-
 ------------------------------
 *DB Schema Design*
 ------------------------------
@@ -108,3 +97,30 @@ Versions - Contains version details for services.
 
 You can find the sample curls attached in curls folder in the directory.
 
+-------------------------------
+*Changes to be done to make this code running on other server*
+-------------------------------
+
+1) Change the DB env vars
+   - Go to ./config/config.go
+   - Change the value for postgresHost, postgresPort,postgresUser,postgresPassword,postgresDB,processName
+
+2) Create Tables and Insert data to the tables
+   - Attached sql queries in ./queries folder
+
+3) While hitting the API, change the Basic Auth Token in Sample Curl.
+
+-------------------------------
+*How to run the API*
+-------------------------------
+
+1) Build the code. Run the below commands*
+ 
+    *go build -o ./build/kong_assignment*
+
+2) Run the code.
+   
+    *nohup ./build/kong_assignment &> assignment.out &*
+
+   It will start the api on your localhost at port 8080. Then you can use the curls attached to hit the api. Make sure the api key is changed.
+   
