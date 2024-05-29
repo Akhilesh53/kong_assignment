@@ -1,0 +1,1 @@
+curl -X GET "http://127.0.0.1:8080/services?page=1&limit=10&sort=name&order=asc" -H "Authorization: Basic a29uZy51c2VyQHRlc3QuY29tOmtvbmdBc3NpZ25tZW50"
